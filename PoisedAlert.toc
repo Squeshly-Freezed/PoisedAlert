@@ -1,11 +1,13 @@
 ## Interface: 16001
 ## Title: Poised Alert
 ## Notes: Plays a sound when the rogue Poised buff becomes active.
-## Author: Rob
+## Author: SqueshlyFreezed
 ## Version: 1.4.2
 ## IconTexture: Interface\Icons\Ability_Stealth
 ## Category: Rogue
 ## SavedVariables: PoisedAlertDB
+## X-License: MIT
+## X-Website: https://github.com/Squeshly-Freezed/PoisedAlert
 
 PoisedAlert.lua
 Settings.lua

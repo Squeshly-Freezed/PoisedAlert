@@ -49,3 +49,7 @@ Name a sound file `poised.ogg` and put it in the `PoisedAlert` folder. Restart t
 - Forever only has the original game's sounds, so SoundKit IDs from later expansions won't play. Look IDs up on wowhead.com/forever/sounds rather than the retail list.
 - Poised is matched by its spell ID as well as its English name, so it should work on other language clients too.
 - Your settings are saved for your whole account.
+
+## Bugs and feedback
+
+Report bugs in the comments on [CurseForge](https://www.curseforge.com/wow/addons/poised-alert) or on [GitHub](https://github.com/Squeshly-Freezed/PoisedAlert/issues).
