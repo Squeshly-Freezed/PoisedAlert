@@ -172,7 +172,7 @@ function openIDBox() StaticPopup_Show("POISEDALERT_SOUND_ID"); return popups[#po
 -- Event helpers ---------------------------------------------------------------
 function event(name, ...) frame.OnEvent(frame, name, ...) end
 function aura(name, id, instance) return { name = name, spellId = id, auraInstanceID = instance, isHelpful = true } end
-function poised(instance) return aura("Poised", 1328825, instance) end
+function poised(instance) return aura("Poised", 1328826, instance) end
 function addAura(a) playerAuras[#playerAuras+1] = a; event("UNIT_AURA", "player", { isFullUpdate = false, addedAuras = { a } }) end
 function dropAura(instance)
   for i, a in ipairs(playerAuras) do if a.auraInstanceID == instance then table.remove(playerAuras, i) break end end
@@ -224,8 +224,8 @@ def db(lua, key): return lua.eval(f"PoisedAlertDB and PoisedAlertDB.{key}")
 def played_since(lua, before): return ncalls(lua) - before
 
 # --- .toc ---------------------------------------------------------------------------
-check(".toc: Forever interface 16001, saves PoisedAlertDB, version 1.4.1",
-      "## Interface: 16001" in TOC and "## SavedVariables: PoisedAlertDB" in TOC and "## Version: 1.4.1" in TOC)
+check(".toc: Forever interface 16001, saves PoisedAlertDB, version 1.4.2",
+      "## Interface: 16001" in TOC and "## SavedVariables: PoisedAlertDB" in TOC and "## Version: 1.4.2" in TOC)
 check(".toc: icon and category for the in-game addon list",
       "## IconTexture: Interface\\Icons\\Ability_Stealth" in TOC and "## Category: Rogue" in TOC)
 check(".toc loads the core before the settings panel", TOC.index("PoisedAlert.lua") < TOC.index("Settings.lua"))
@@ -344,11 +344,11 @@ lua.execute("""clock = 500; dropAura(13); dropAura(15)
   setEnergy(40); clock = 506.0; setEnergy(100)
   clock = 506.52; addAura(poised(16))""")
 check("debug shows how long after full Energy Poised arrived",
-      "Poised is up (spell ID 1328825), 0.52 s after full Energy." in all_prints(lua))
+      "Poised is up (spell ID 1328826), 0.52 s after full Energy." in all_prints(lua))
 lua.execute("clock = 520; dropAura(16); inCombat = true; event('PLAYER_REGEN_DISABLED'); inCombat = false; clock = 530; addAura(poised(17))")
 check("combat resets the Energy clock", "time since full Energy unknown" in last_print(lua))
 lua.execute("clock = 535; swapAura(17, poised(18))")
-check("debug notes refreshes too", "Poised refreshed (spell ID 1328825), no sound." in last_print(lua))
+check("debug notes refreshes too", "Poised refreshed (spell ID 1328826), no sound." in last_print(lua))
 
 b = ncalls(lua)
 lua.execute("registered.POISEDALERT_ENABLED:SetValue(false); clock = 600; dropAura(18); clock = 610; addAura(poised(19))")
@@ -525,6 +525,9 @@ check("still loads and works on a client without the restriction event or API", 
 lua6 = fresh(before="issecretvalue = nil")
 lua6.execute("event('PLAYER_ENTERING_WORLD'); clock = 50; addAura(poised(1))")
 check("works when issecretvalue doesn't exist", ncalls(lua6) == 1)
+lua7 = fresh()
+lua7.execute("addonLoaded(); event('PLAYER_ENTERING_WORLD'); clock = 50; addAura(aura('Bereit', 1328826, 1))")
+check("in another language, where the buff has another name, the spell ID still finds it", ncalls(lua7) == 1)
 
 print(f"\n{failures} failure(s)")
 sys.exit(1 if failures else 0)

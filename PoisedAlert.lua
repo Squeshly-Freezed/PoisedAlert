@@ -13,7 +13,7 @@
 local addonName, ns = ...
 
 local POISED_NAME     = "Poised"  -- the buff's name (change it if your game isn't in English)
-local POISED_SPELL_ID = 1328825   -- Poised's spell ID; the name check covers it if the buff uses another ID
+local POISED_SPELL_ID = 1328826   -- the Poised buff's spell ID, confirmed in game; the name check is a backup
 
 local REPEAT_GUARD = 3  -- seconds: never sound twice within this long
 local FLICKER      = 1  -- seconds: Poised vanishing and coming straight back is the same buff

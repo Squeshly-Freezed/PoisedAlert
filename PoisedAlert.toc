@@ -2,7 +2,7 @@
 ## Title: Poised Alert
 ## Notes: Plays a sound when the rogue Poised buff becomes active.
 ## Author: Rob
-## Version: 1.4.1
+## Version: 1.4.2
 ## IconTexture: Interface\Icons\Ability_Stealth
 ## Category: Rogue
 ## SavedVariables: PoisedAlertDB

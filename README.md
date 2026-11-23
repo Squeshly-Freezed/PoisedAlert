@@ -38,7 +38,7 @@ Name a sound file `poised.ogg` and put it in the `PoisedAlert` folder. Restart t
 
 ## How it works
 
-- `UNIT_AURA` on you: Poised Alert looks for a new buff named Poised (or its spell ID, 1328825) and remembers that copy of the buff, so a refresh isn't mistaken for a new Poised.
+- `UNIT_AURA` on you: Poised Alert looks for a new buff named Poised (or its spell ID, 1328826) and remembers that copy of the buff, so a refresh isn't mistaken for a new Poised.
 - Forever hides buff details from addons during combat, boss encounters, challenge-mode dungeons and PvP matches. Poised Alert checks `C_RestrictedActions.IsAddOnRestrictionActive` before reading your buffs, and quietly catches up once they're visible again.
 - `IsStealthed()` and `UPDATE_STEALTH` drive "Only while stealthed".
 - `PlaySound` plays the sound on the channel you chose and reports whether it played, which is how the backup chime knows to step in.

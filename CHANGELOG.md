@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.1
+## 1.4.2
 
 First public release.
 
@@ -11,4 +11,4 @@ First public release.
 - An icon and a Rogue group in the in-game addon list.
 - Stays quiet, without errors, when the game hides buffs from addons (boss encounters, PvP matches), and catches up afterwards.
 
-Versions 1.0 to 1.4.0 were private test builds.
+Versions 1.0 to 1.4.1 were test builds.
