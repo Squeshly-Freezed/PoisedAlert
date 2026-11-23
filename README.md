@@ -1,4 +1,4 @@
-# Poised Alert
+<p align="center"><img src="https://raw.githubusercontent.com/Squeshly-Freezed/PoisedAlert/main/media/banner.png" alt="Poised Alert: hear the moment Poised is ready. A rogue addon for WoW Forever."></p>
 
 Plays a sound the moment the rogue Poised buff lands on you, so you know your opener is ready without watching your buffs.
 
